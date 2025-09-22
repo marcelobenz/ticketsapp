@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TicketController;
+
+Route::get('/tickets/upload', function () {
+    return view('upload_ticket');
+})->name('tickets.form');
+
+Route::post('/tickets/upload', [TicketController::class, 'upload'])->name('tickets.upload');
 
 /*
 |--------------------------------------------------------------------------
