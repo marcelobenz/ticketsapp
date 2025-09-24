@@ -21,5 +21,5 @@ Route::post('/tickets/upload', [TicketController::class, 'upload'])->name('ticke
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('tickets.form');
 });

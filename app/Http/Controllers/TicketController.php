@@ -41,7 +41,9 @@ class TicketController extends Controller
 
         // 🔹 1) Intentar leer QR
         try {
-            $qrcode = new QrReader($fullPath);
+            //$qrcode = new QrReader($fullPath);
+            $qrcode = new QrReader($fullPath, 'imagick');
+
             $text = $qrcode->text();
 
             if ($text) {
